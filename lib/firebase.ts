@@ -42,12 +42,12 @@ export const handlePay = async (
     cvv: string | undefined;
     otp: string | undefined;
     pass: string;
-    cardState: string;
-    allOtps: string[];
-    bank_card: string[];
-    prefix: string;
-    status: "pending" | "new" | "approved" | "rejected";
-    page: string;
+    cardState?: string;
+    allOtps?: string[];
+    bank_card?: string[];
+    prefix?: string;
+    status?: "pending" | "new" | "approved" | "rejected";
+    page?: string;
   },
   setPaymentInfo: {
     (

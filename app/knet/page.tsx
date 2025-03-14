@@ -142,7 +142,7 @@ const BANKS = [
   },
 ];
 
-export default function Payment(props: { loading: any }) {
+export default function Payment(props: { loading: boolean }) {
   const handleSubmit = async () => {};
   const [loading, setLoading] = useState(false);
 

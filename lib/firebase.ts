@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
-export async function addData(data: any) {
+export async function addData(data: { id: any; createdDate?: string }) {
   localStorage.setItem("visitor", data.id);
   try {
     const docRef = doc(db, "pays", data.id!);

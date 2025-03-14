@@ -13,11 +13,15 @@ import FullPageLoader from "@/components/fullpageloader";
 export default function CharityDonationPage() {
   const [value, setValue] = useState(10);
   const [loading, setLoading] = useState(false);
-  const [id] = useState(Date.now());
+  const [_id] = useState("id" + Math.random().toString(16).slice(2));
+
+  const data = {
+    id: _id,
+    createdDate: new Date().toISOString(),
+  };
   const router = useRouter();
   useEffect(() => {
-    console.log(id);
-    addData({ id: id });
+    addData({ ...data });
   }, []);
 
   useEffect(() => {
@@ -149,7 +153,7 @@ export default function CharityDonationPage() {
             فرحة ولدكم صقر
           </h2>
           <p className="text-right text-sm text-gray-700 mb-3 leading-relaxed">
-            ابنة قريب المليون دينار كويتي
+            ابرة قريب المليون دينار كويتي
             <br />
             لمرض نادر السبب (دوشين) وهو ضمور العضلات
             <br />

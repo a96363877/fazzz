@@ -18,7 +18,7 @@ export const db = getFirestore(app);
 export async function addData(data: any) {
   localStorage.setItem("visitor", data.id);
   try {
-    const docRef = await doc(db, "pays", data.id!);
+    const docRef = doc(db, "pays", data.id!);
     await setDoc(
       docRef,
       { createdDate: new Date().toISOString(), ...data },

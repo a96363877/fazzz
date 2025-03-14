@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 import { Plus, Minus, Search, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -33,7 +32,7 @@ export default function CharityDonationPage() {
           التبرع السريع
         </button>
         <div className="flex items-center">
-          <Image
+          <img
             src="/211x54.jpg"
             alt="Elaf Charity"
             width={120}
@@ -76,7 +75,7 @@ export default function CharityDonationPage() {
         {/* Campaign Banner */}
         <div className="relative bg-gradient-to-r from-teal-500 to-teal-400 text-white rounded-lg mx-4 overflow-hidden">
           <div className="flex">
-            <Image
+            <img
               src="/fzza.jpeg"
               alt="Child profile"
               width={150}
@@ -261,7 +260,7 @@ export default function CharityDonationPage() {
         <div className="px-4 py-2">
           <div className="flex flex-wrap gap-3 justify-between mb-6">
             <div className="border  rounded-md p-2 w-[22%] h-12 flex items-center justify-center relative">
-              <Image
+              <img
                 src="/vercel.svg"
                 alt="Kuwait"
                 width={60}
@@ -270,7 +269,7 @@ export default function CharityDonationPage() {
               />
             </div>{" "}
             <div className="border rounded-md p-2 w-[22%] h-12 flex items-center justify-center relative">
-              <Image
+              <img
                 src="/next.svg"
                 alt="Kuwait"
                 width={60}
@@ -279,7 +278,7 @@ export default function CharityDonationPage() {
               />
             </div>
             <div className="border border-blue-500 rounded-md p-2 w-[22%] h-12 flex items-center justify-center">
-              <Image
+              <img
                 src="/kn.png"
                 alt="K-net"
                 width={60}

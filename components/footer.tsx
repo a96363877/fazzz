@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Home, User, ShoppingCart } from "lucide-react";
-
 export function Footer() {
   return (
     <footer className="bg-teal-600 text-white">

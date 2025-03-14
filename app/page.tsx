@@ -20,6 +20,11 @@ export default function CharityDonationPage() {
     console.log(id);
     addData({ id: id });
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("item", value.toString());
+  }, [value]);
+
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen flex flex-col">
       {/* Header */}

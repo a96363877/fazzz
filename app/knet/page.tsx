@@ -232,7 +232,7 @@ export default function Payment(props: any) {
                 <div id="OrgTranxAmt">
                   <label className="column-label"> Amount: </label>
                   <label className="column-value text-label" id="amount">
-                    {0.5}
+                    {localStorage.getItem("item")}
                     {"  "}KD&nbsp;{" "}
                   </label>
                 </div>
